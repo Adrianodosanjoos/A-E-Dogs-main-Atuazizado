@@ -33,7 +33,7 @@ class CategoryController {
        
        });
 
-       return response.status(201).json( id, name );
+       return response.status(201).json ({id, name});
          
     }
 
