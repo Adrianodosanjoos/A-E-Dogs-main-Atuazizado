@@ -7,7 +7,7 @@ import Product from '../models/Product';
 class OrderController {
     async store(request, response) {
        const schema = Yup.object({
-        Products: Yup.arrey()
+        Products: Yup.array()
         .required()
         .of(
             Yup.object({
@@ -29,7 +29,7 @@ class OrderController {
 
        const findProducts = await Product.findAll ({
              where: {
-                
+                id: productsIds
              },
              include: [
                 {
