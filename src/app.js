@@ -1,14 +1,16 @@
 import express from 'express';
 import {resolve} from 'node:path';
+import cors from 'cors';
 
 import routes from './routes.js';
-
 
 import './database'
 
 class App {
     constructor() {
         this.app = express();
+
+        this.app.use(cors());
 
         this.middlewares();
         this.routes();
